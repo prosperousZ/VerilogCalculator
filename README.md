@@ -1,16 +1,16 @@
 # VerilogCalculator
 
-Contributers:
-    PINNI-lU, U1402108, u1402108@utah.edu<br/> 
-    Beverly Yee, u0770041, bevyujw@gmail.com<br/> 
-    Ekata Mitra U1303742 ekata.mitra@utah.edu<br/> 
-    Haoze Zhang, u0904009, u0904009@umail.utah.edu<br/> 
+Contributers:<br/>
+&nbsp; PINNI-lU, U1402108, u1402108@utah.edu<br/> 
+&nbsp; Beverly Yee, u0770041, bevyujw@gmail.com<br/> 
+&nbsp; Ekata Mitra U1303742 ekata.mitra@utah.edu<br/> 
+&nbsp; Haoze Zhang, u0904009, u0904009@umail.utah.edu<br/> 
 <br/>
 A recreation of a simple calculator using Verilog. It serves as a means to both ease back into Verilog and show off the combination of everything learned over the years. And high-level approach to this project is discussed in the Project Proposal file.
 <br/> <br/>
 <b>Milestone 1:</b>
 <ul style="margin-top:0px">
-    <li>The intention was to get the overall calculator structure down then work on the operations one by one. Successful, but a bit slow moving in that Verilog is rusty for all members. Anticipation is that the process will become faster as the project progresses.<li>
+    <li>The intention was to get the overall calculator structure down then work on the operations one by one. Successful, but a bit slow moving in that Verilog is rusty for all members. Anticipation is that the process will become faster as the project progresses.</li>
     <li>Began the implementation of the ALU with a basic structure - have it set up that it will hit case statements and do something. Untested, however.</li>
     <li>Concerns:
         <ul style="margin-top:0px">
