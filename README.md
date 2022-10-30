@@ -17,6 +17,8 @@ A recreation of a simple calculator using Verilog. It serves as a means to both 
             <li>What kind of FPGA does the stockroom have available for us to borrow?</li>
             <li>How to comminucate with the FPGA? It sounds like there will be some kind of protocol to do so (same with any other potential peripherals).</li>
             <li>Both the circuit and the FPGA will have their own power source--how will that affect their communcation?</li>
+            <li>Can the FPGA support upwards to a 16-bit output? Likewise, how to get an input from simple buttons on the FPGA that is more than one digit?</li>
+            <li>What would be the best way to create a negative number and check for it?</li>
         </ul>
     </li>
 </ul>
