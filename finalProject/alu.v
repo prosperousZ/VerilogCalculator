@@ -1,0 +1,46 @@
+//This is alu file
+
+
+module alu(a,b,out,mode,neg);
+//implement every operation here like 
+
+//Module to select operation and calculate result
+input [3:0]a,b,mode;
+output [7:0]out;
+reg [7:0] out;
+output reg neg;
+always@(a or b)
+begin
+
+//add
+	out = 8'b00000000;
+	if(mode == 4'b0001)
+		begin
+		out = a+b;
+		neg = 0;
+		end
+//sub
+	if(mode == 4'b0100)
+		begin
+		if(b > a)
+			begin 
+			out=b-a;
+			neg = 1;
+			end
+		else
+			begin
+			out=a-b;
+			neg = 0;
+			end
+		end
+
+//mul
+	if(mode == 4'b0010)
+		begin
+		out = a*b;
+		neg =0;
+		end
+//etc.
+
+
+endmodule
