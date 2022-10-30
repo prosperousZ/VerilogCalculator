@@ -19,6 +19,8 @@ A recreation of a simple calculator using Verilog. It serves as a means to both 
             <li>Both the circuit and the FPGA will have their own power source--how will that affect their communcation?</li>
             <li>Can the FPGA support upwards to a 16-bit output? Likewise, how to get an input from simple buttons on the FPGA that is more than one digit?</li>
             <li>What would be the best way to create a negative number and check for it?</li>
+            <li>Will the calculator only accept 2 operand operations?</li>
+            <li>Will it have the ability to take the previous result and perform an operation on it?</li>
         </ul>
     </li>
 </ul>

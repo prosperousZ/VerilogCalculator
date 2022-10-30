@@ -1,5 +1,6 @@
 
 
+//////////////////////////////////////////////////////////////////////////////////
 // Module Name:		alu 
 // Description: 	Module to select operation and caculate the result given 2 inputs.
 // 					All arithmetic calculations will be done in this module.
@@ -10,7 +11,7 @@
 //					mode - what operation to carry out
 //					neg - whether the number is negative or not
 //
-// Comments: 		This ALU will operate using the format "a OPERATION b = RESULT" in which 
+// Comments: 		This ALU will operate using the format "a OPERATION b = RESULT"
 //
 //////////////////////////////////////////////////////////////////////////////////
 module alu(a, b, out, mode, neg);
