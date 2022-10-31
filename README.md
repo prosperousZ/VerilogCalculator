@@ -26,6 +26,7 @@ A recreation of a simple calculator using Verilog. It serves as a means to both 
 </ul>
 <br/>
 <b>Milestone 2:</b>
+To be updated
 <ul>
     <li></li>
     
