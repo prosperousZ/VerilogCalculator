@@ -6,4 +6,6 @@ vlib rtl_work
 vmap work rtl_work
 
 vlog -vlog01compat -work work +incdir+D:/quartus/finalProject {D:/quartus/finalProject/finalProject.v}
+vlog -vlog01compat -work work +incdir+D:/quartus/finalProject {D:/quartus/finalProject/processor.v}
+vlog -vlog01compat -work work +incdir+D:/quartus/finalProject {D:/quartus/finalProject/datapath.v}
 

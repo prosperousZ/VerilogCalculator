@@ -1,5 +1,5 @@
 Fitter report for finalProject
-Fri Oct 28 01:58:36 2022
+Sat Nov 19 19:04:44 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -57,7 +57,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Fri Oct 28 01:58:36 2022       ;
+; Fitter Status                   ; Successful - Sat Nov 19 19:04:44 2022       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; finalProject                                ;
 ; Top-level Entity Name           ; finalProject                                ;
@@ -1757,10 +1757,10 @@ Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
 Info (144001): Generated suppressed messages file D:/quartus/finalProject/output_files/finalProject.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 6923 megabytes
-    Info: Processing ended: Fri Oct 28 01:58:36 2022
+    Info: Peak virtual memory: 6920 megabytes
+    Info: Processing ended: Sat Nov 19 19:04:44 2022
     Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:50
+    Info: Total CPU time (on all processors): 00:00:49
 
 
 +----------------------------+
