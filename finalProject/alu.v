@@ -1,5 +1,3 @@
-
-
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:		alu 
 // Description: 	Module to select operation and caculate the result given 2 inputs.
@@ -15,29 +13,24 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-// random text 
-
-
-//module alu(a, b, out, mode, neg);
-module alu(a, b, out, mode);
+module alu(a, b, mode, out);//, neg);
 	// definitions of parameters, inputs, outputs, wires, regs...
-	input [3:0] a, b;
+	//Let me take neg first to test
 	
-	// FPGA has only 10 switches: 8 will be numbers, 2 will be operations
-	// which means some numbers and operations will be a combination of 2 switches.
+	input [7:0] a, b;
+	
+	//Since the FPGA only have 10 switch, I think 8 of them for input, only two of them for operation
 	input [1:0] mode;
 
-	reg [7:0] out;
 
-	output [7:0] out;
-	// temporarily remove for testing
+	output reg [7:0] out;
 	//output reg neg;
 
 	// variable names for modes to make things easier
-	parameter ADD = 4'b0001;
-	parameter SUB = 4'b0010;
-	parameter MUL = 4'b0011;
-	parameter DIV = 4'b0100;
+	parameter ADD = 2'b00;
+	parameter SUB = 2'b01;
+	parameter MUL = 2'b10;
+	parameter DIV = 2'b11;
 
 	// do something whenever a or b changes -> may need more on the list
 	always@(a or b)
@@ -76,5 +69,7 @@ module alu(a, b, out, mode);
 			begin
 				// do nothing for now
 			end
+	endcase
+	
 	end
 endmodule
