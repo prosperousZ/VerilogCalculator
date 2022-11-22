@@ -15,6 +15,9 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
+// random text 
+
+
 //module alu(a, b, out, mode, neg);
 module alu(a, b, out, mode);
 	// definitions of parameters, inputs, outputs, wires, regs...
