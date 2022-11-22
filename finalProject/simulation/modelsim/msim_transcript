@@ -12,34 +12,53 @@
 # 
 # vlog -vlog01compat -work work +incdir+D:/quartus/finalProject {D:/quartus/finalProject/finalProject.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 20:51:44 on Oct 27,2022
+# Start time: 00:59:41 on Nov 03,2022
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/quartus/finalProject" D:/quartus/finalProject/finalProject.v 
 # -- Compiling module finalProject
 # 
 # Top level modules:
 # 	finalProject
-# End time: 20:51:44 on Oct 27,2022, Elapsed time: 0:00:00
+# End time: 00:59:41 on Nov 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# 
-vsim work.finalProject
-# vsim work.finalProject 
-# Start time: 20:52:24 on Oct 27,2022
-# Loading work.finalProject
-vlog -reportprogress 300 -work work D:/quartus/finalProject/tb_finalProject.v D:/quartus/finalProject/finalProject.v
+# vlog -vlog01compat -work work +incdir+D:/quartus/finalProject {D:/quartus/finalProject/processor.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 20:52:53 on Oct 27,2022
-# vlog -reportprogress 300 -work work D:/quartus/finalProject/tb_finalProject.v D:/quartus/finalProject/finalProject.v 
-# -- Compiling module finalProject
+# Start time: 00:59:41 on Nov 03,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/quartus/finalProject" D:/quartus/finalProject/processor.v 
+# -- Compiling module processor
 # 
 # Top level modules:
-# 	finalProject
-# End time: 20:52:53 on Oct 27,2022, Elapsed time: 0:00:00
+# 	processor
+# End time: 00:59:41 on Nov 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vsim work.finalProject
-# End time: 20:53:42 on Oct 27,2022, Elapsed time: 0:01:18
+# vlog -vlog01compat -work work +incdir+D:/quartus/finalProject {D:/quartus/finalProject/datapath.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:59:41 on Nov 03,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/quartus/finalProject" D:/quartus/finalProject/datapath.v 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 00:59:41 on Nov 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim work.finalProject 
-# Start time: 20:53:42 on Oct 27,2022
-# Loading work.finalProject
-# End time: 20:53:52 on Oct 27,2022, Elapsed time: 0:00:10
+# 
+vlog -reportprogress 300 -work work D:/quartus/finalProject/alu.v D:/quartus/finalProject/tb_alu.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:59:58 on Nov 03,2022
+# vlog -reportprogress 300 -work work D:/quartus/finalProject/alu.v D:/quartus/finalProject/tb_alu.v 
+# -- Compiling module alu
+# -- Compiling module tb_alu
+# 
+# Top level modules:
+# 	tb_alu
+# End time: 00:59:58 on Nov 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -gui -l msim_transcript work.tb_alu
+# vsim -gui -l msim_transcript work.tb_alu 
+# Start time: 01:00:03 on Nov 03,2022
+# Loading work.tb_alu
+# Loading work.alu
+add wave -position insertpoint sim:/tb_alu/*
+run -all
+# result is : 17
+# End time: 01:00:13 on Nov 03,2022, Elapsed time: 0:00:10
 # Errors: 0, Warnings: 0

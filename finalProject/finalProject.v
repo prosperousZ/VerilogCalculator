@@ -1,5 +1,3 @@
-
-
 //////////////////////////////////////////////////////////////////////////////////
 // Module Name:		finalProject
 // Description: 	Main file that runs the entire program, like a main function in a C# program.
@@ -25,29 +23,22 @@ module finalProject(clk,rst,data, data_clk, vga_r, vga_g, vga_b, vga_clk, vga_bl
     output vga_clk, vga_blank, hsync, vsync;
     output [7:0] vga_r, vga_g, vga_b;
 
-    // hold a 16-bit number--may need to change or add more
+    // hold a 8-bit number--may need to change or add more
     // will eventually write to IO interface
     // TODO: change wire to reg (reg is for storage while wires are scalar values)
-    wire[15:0] io_mem, io_write_data, io_mem_address;
+    wire[7:0] io_mem, io_write_data, io_mem_address;
   
     // load the operation from FPGA button, and pass the operation to ALU
     // TODO: change wire to reg
     wire io_enable, load_operation, store_operation;
   
     //This is the basic idea how to run, we gonna pass to processor to deal with the data path and ALU etc, 
-    processor proc(clk,rst,io_mem,io_write_data,io_mem_address, io_enable);
-  
-  
-  //Because we need a lot of variables, to be able to display on screen, may be able to reduce, deal with later
-  //just write for concept.
+    processor proc(clk, rst, io_mem, io_write_data, io_mem_address, io_enable);
   
   
   //*****************concept structure of io**************************
-  
+  // may not need as we are not really interfacing with another chip at this time
   //io_interface io_int(clk, rst, io_enable,load_operation, store_operation, data_clk, data,
   //                  io_mem_address, io_write_data, io_mem,
-  //					 vga_clk, vga_blank, hsync, vsync, vga_r, vga_g, vga_b);
-							 
-  //*****************can be uncommen****************************************
- 
+  //					 vga_clk, vga_blank, hsync, vsync, vga_r, vga_g, vga_b); 
 endmodule

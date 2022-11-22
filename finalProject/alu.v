@@ -14,14 +14,21 @@
 // Comments: 		This ALU will operate using the format "a OPERATION b = RESULT"
 //
 //////////////////////////////////////////////////////////////////////////////////
-module alu(a, b, out, mode, neg);
+
+//module alu(a, b, out, mode, neg);
+module alu(a, b, out, mode);
 	// definitions of parameters, inputs, outputs, wires, regs...
-	input [3:0] a, b, mode;
+	input [3:0] a, b;
+	
+	// FPGA has only 10 switches: 8 will be numbers, 2 will be operations
+	// which means some numbers and operations will be a combination of 2 switches.
+	input [1:0] mode;
 
 	reg [7:0] out;
 
 	output [7:0] out;
-	output reg neg;
+	// temporarily remove for testing
+	//output reg neg;
 
 	// variable names for modes to make things easier
 	parameter ADD = 4'b0001;
@@ -38,7 +45,7 @@ module alu(a, b, out, mode, neg);
 			ADD:
 			begin
 				out = a + b;
-				neg = 0;
+				//neg = 0;
 			end
 
 			SUB:
@@ -46,12 +53,12 @@ module alu(a, b, out, mode, neg);
 				if(b > a)
 					begin
 						out = b - a;
-						neg = 1;
+						//neg = 1;
 					end
 				else
 					begin
 						out = a - b;
-						neg = 0;
+						//neg = 0;
 					end
 			end
 
@@ -59,7 +66,7 @@ module alu(a, b, out, mode, neg);
 			begin
 				out = a * b;
 				// neg = 0 only if both a and b are positive or negative
-				neg = 0;
+				//neg = 0;
 			end
 
 			DIV:

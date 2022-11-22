@@ -1,5 +1,5 @@
 Analysis & Synthesis report for finalProject
-Fri Oct 28 01:58:18 2022
+Sat Nov 19 19:04:25 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -14,11 +14,17 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "processor:proc|datapath:DP"
- 10. Port Connectivity Checks: "processor:proc"
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. Parameter Settings for User Entity Instance: processor:proc|datapath:DP|regfile:Reg
+ 10. Parameter Settings for User Entity Instance: processor:proc|datapath:DP|memory:Mem
+ 11. Parameter Settings for User Entity Instance: processor:proc|datapath:DP|alu:Alu
+ 12. Port Connectivity Checks: "processor:proc|datapath:DP|alu:Alu"
+ 13. Port Connectivity Checks: "processor:proc|datapath:DP|memory:Mem"
+ 14. Port Connectivity Checks: "processor:proc|datapath:DP|regfile:Reg"
+ 15. Port Connectivity Checks: "processor:proc|datapath:DP"
+ 16. Port Connectivity Checks: "processor:proc"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -44,7 +50,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Oct 28 01:58:18 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sat Nov 19 19:04:25 2022       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; finalProject                                ;
 ; Top-level Entity Name           ; finalProject                                ;
@@ -173,6 +179,9 @@ refer to the applicable agreement for further details.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path           ; Library ;
 +----------------------------------+-----------------+------------------------+----------------------------------------+---------+
 ; finalProject.v                   ; yes             ; User Verilog HDL File  ; D:/quartus/finalProject/finalProject.v ;         ;
+; memory.v                         ; yes             ; User Verilog HDL File  ; D:/quartus/finalProject/memory.v       ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File  ; D:/quartus/finalProject/alu.v          ;         ;
+; regfile.v                        ; yes             ; User Verilog HDL File  ; D:/quartus/finalProject/regfile.v      ;         ;
 ; processor.v                      ; yes             ; User Verilog HDL File  ; D:/quartus/finalProject/processor.v    ;         ;
 ; datapath.v                       ; yes             ; User Verilog HDL File  ; D:/quartus/finalProject/datapath.v     ;         ;
 +----------------------------------+-----------------+------------------------+----------------------------------------+---------+
@@ -230,26 +239,81 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "processor:proc|datapath:DP"                                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                 ;
-+------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
-; r0   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                     ;
-; r3   ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (1 bits) it drives; bit(s) "r3[15..1]" have no fanouts ;
-; r4   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                ;
-; r5   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                ;
-; r6   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                ;
-; r7   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                ;
-; r8   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                ;
-; r9   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                ;
-; r10  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                ;
-; r11  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                ;
-; r12  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                ;
-; r13  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                ;
-; r14  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                ;
-; r15  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                ;
-+------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:proc|datapath:DP|regfile:Reg ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; WIDTH          ; 8     ; Signed Integer                                             ;
+; REGBITS        ; 3     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:proc|datapath:DP|memory:Mem ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; DATA_WIDTH     ; 8     ; Signed Integer                                            ;
+; ADDR_WIDTH     ; 8     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:proc|datapath:DP|alu:Alu ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; ADD            ; 00    ; Unsigned Binary                                        ;
+; SUB            ; 01    ; Unsigned Binary                                        ;
+; MUL            ; 10    ; Unsigned Binary                                        ;
+; DIV            ; 11    ; Unsigned Binary                                        ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processor:proc|datapath:DP|alu:Alu"                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processor:proc|datapath:DP|memory:Mem"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processor:proc|datapath:DP|regfile:Reg"                                                                                                    ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                    ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; wa   ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "wa[2..1]" will be connected to GND. ;
+; rd2  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                        ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processor:proc|datapath:DP"                                                                                           ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                               ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------+
+; r0   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                   ;
+; r3   ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "r3[7..1]" have no fanouts ;
+; r4   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.              ;
+; r5   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.              ;
+; r6   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.              ;
+; r7   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.              ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -293,33 +357,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Fri Oct 28 01:58:11 2022
+    Info: Processing started: Sat Nov 19 19:04:19 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off finalProject -c finalProject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file finalproject.v
-    Info (12023): Found entity 1: finalProject File: D:/quartus/finalProject/finalProject.v Line: 10
+    Info (12023): Found entity 1: finalProject File: D:/quartus/finalProject/finalProject.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file tb_finalproject.v
     Info (12023): Found entity 1: tb_finalProject File: D:/quartus/finalProject/tb_finalProject.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file memory.v
-    Info (12023): Found entity 1: memory File: D:/quartus/finalProject/memory.v Line: 3
+    Info (12023): Found entity 1: memory File: D:/quartus/finalProject/memory.v Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file tb_memory.v
     Info (12023): Found entity 1: tb_memory File: D:/quartus/finalProject/tb_memory.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
-    Info (12023): Found entity 1: alu File: D:/quartus/finalProject/alu.v Line: 4
+    Info (12023): Found entity 1: alu File: D:/quartus/finalProject/alu.v Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file tb_alu.v
     Info (12023): Found entity 1: tb_alu File: D:/quartus/finalProject/tb_alu.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file io_interface.v
-    Info (12023): Found entity 1: io_interface File: D:/quartus/finalProject/io_interface.v Line: 4
+    Info (12023): Found entity 1: io_interface File: D:/quartus/finalProject/io_interface.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file tb_io_interface.v
     Info (12023): Found entity 1: tb_io_interface File: D:/quartus/finalProject/tb_io_interface.v Line: 5
-Warning (12090): Entity "mux" obtained from "mux.v" instead of from Quartus Prime megafunction library File: D:/quartus/finalProject/mux.v Line: 3
+Warning (12090): Entity "mux" obtained from "mux.v" instead of from Quartus Prime megafunction library File: D:/quartus/finalProject/mux.v Line: 13
 Info (12021): Found 1 design units, including 1 entities, in source file mux.v
-    Info (12023): Found entity 1: mux File: D:/quartus/finalProject/mux.v Line: 3
+    Info (12023): Found entity 1: mux File: D:/quartus/finalProject/mux.v Line: 13
 Info (12021): Found 1 design units, including 1 entities, in source file io_vga.v
     Info (12023): Found entity 1: io_vga File: D:/quartus/finalProject/io_vga.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file regfile.v
-    Info (12023): Found entity 1: regfile File: D:/quartus/finalProject/regfile.v Line: 4
+    Info (12023): Found entity 1: regfile File: D:/quartus/finalProject/regfile.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file tb_regfile.v
     Info (12023): Found entity 1: tb_regfile File: D:/quartus/finalProject/tb_regfile.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file processor.v
@@ -327,79 +391,76 @@ Info (12021): Found 1 design units, including 1 entities, in source file process
 Info (12021): Found 1 design units, including 1 entities, in source file tb_processor.v
     Info (12023): Found entity 1: tb_processor File: D:/quartus/finalProject/tb_processor.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file datapath.v
-    Info (12023): Found entity 1: datapath File: D:/quartus/finalProject/datapath.v Line: 4
+    Info (12023): Found entity 1: datapath File: D:/quartus/finalProject/datapath.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file tb_datapath.v
     Info (12023): Found entity 1: tb_datapath File: D:/quartus/finalProject/tb_datapath.v Line: 6
+Warning (10236): Verilog HDL Implicit Net warning at datapath.v(48): created implicit net for "wa" File: D:/quartus/finalProject/datapath.v Line: 48
 Info (12127): Elaborating entity "finalProject" for the top level hierarchy
-Warning (10034): Output port "vga_r" at finalProject.v(16) has no driver File: D:/quartus/finalProject/finalProject.v Line: 16
-Warning (10034): Output port "vga_g" at finalProject.v(16) has no driver File: D:/quartus/finalProject/finalProject.v Line: 16
-Warning (10034): Output port "vga_b" at finalProject.v(16) has no driver File: D:/quartus/finalProject/finalProject.v Line: 16
-Warning (10034): Output port "vga_clk" at finalProject.v(18) has no driver File: D:/quartus/finalProject/finalProject.v Line: 18
-Warning (10034): Output port "vga_blank" at finalProject.v(18) has no driver File: D:/quartus/finalProject/finalProject.v Line: 18
-Warning (10034): Output port "hsync" at finalProject.v(18) has no driver File: D:/quartus/finalProject/finalProject.v Line: 18
-Warning (10034): Output port "vsync" at finalProject.v(19) has no driver File: D:/quartus/finalProject/finalProject.v Line: 19
-Info (12128): Elaborating entity "processor" for hierarchy "processor:proc" File: D:/quartus/finalProject/finalProject.v Line: 28
+Warning (10034): Output port "vga_r" at finalProject.v(25) has no driver File: D:/quartus/finalProject/finalProject.v Line: 25
+Warning (10034): Output port "vga_g" at finalProject.v(25) has no driver File: D:/quartus/finalProject/finalProject.v Line: 25
+Warning (10034): Output port "vga_b" at finalProject.v(25) has no driver File: D:/quartus/finalProject/finalProject.v Line: 25
+Warning (10034): Output port "vga_clk" at finalProject.v(24) has no driver File: D:/quartus/finalProject/finalProject.v Line: 24
+Warning (10034): Output port "vga_blank" at finalProject.v(24) has no driver File: D:/quartus/finalProject/finalProject.v Line: 24
+Warning (10034): Output port "hsync" at finalProject.v(24) has no driver File: D:/quartus/finalProject/finalProject.v Line: 24
+Warning (10034): Output port "vsync" at finalProject.v(24) has no driver File: D:/quartus/finalProject/finalProject.v Line: 24
+Info (12128): Elaborating entity "processor" for hierarchy "processor:proc" File: D:/quartus/finalProject/finalProject.v Line: 37
 Info (12128): Elaborating entity "datapath" for hierarchy "processor:proc|datapath:DP" File: D:/quartus/finalProject/processor.v Line: 24
-Warning (10034): Output port "r0" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r1" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r2" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r3" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r4" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r5" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r6" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r7" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r8" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r9" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r10" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r11" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r12" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r13" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r14" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (10034): Output port "r15" at datapath.v(8) has no driver File: D:/quartus/finalProject/datapath.v Line: 8
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (10034): Output port "r0" at datapath.v(43) has no driver File: D:/quartus/finalProject/datapath.v Line: 43
+Warning (10034): Output port "r1" at datapath.v(43) has no driver File: D:/quartus/finalProject/datapath.v Line: 43
+Warning (10034): Output port "r2" at datapath.v(43) has no driver File: D:/quartus/finalProject/datapath.v Line: 43
+Warning (10034): Output port "r3" at datapath.v(43) has no driver File: D:/quartus/finalProject/datapath.v Line: 43
+Warning (10034): Output port "r4" at datapath.v(43) has no driver File: D:/quartus/finalProject/datapath.v Line: 43
+Warning (10034): Output port "r5" at datapath.v(43) has no driver File: D:/quartus/finalProject/datapath.v Line: 43
+Warning (10034): Output port "r6" at datapath.v(43) has no driver File: D:/quartus/finalProject/datapath.v Line: 43
+Warning (10034): Output port "r7" at datapath.v(43) has no driver File: D:/quartus/finalProject/datapath.v Line: 43
+Info (12128): Elaborating entity "regfile" for hierarchy "processor:proc|datapath:DP|regfile:Reg" File: D:/quartus/finalProject/datapath.v Line: 48
+Info (12128): Elaborating entity "memory" for hierarchy "processor:proc|datapath:DP|memory:Mem" File: D:/quartus/finalProject/datapath.v Line: 54
+Info (12128): Elaborating entity "alu" for hierarchy "processor:proc|datapath:DP|alu:Alu" File: D:/quartus/finalProject/datapath.v Line: 60
+Warning (10235): Verilog HDL Always Construct warning at alu.v(40): variable "mode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/quartus/finalProject/alu.v Line: 40
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "vga_r[0]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_r[1]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_r[2]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_r[3]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_r[4]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_r[5]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_r[6]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_r[7]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_g[0]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_g[1]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_g[2]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_g[3]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_g[4]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_g[5]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_g[6]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_g[7]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_b[0]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_b[1]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_b[2]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_b[3]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_b[4]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_b[5]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_b[6]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_b[7]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 16
-    Warning (13410): Pin "vga_clk" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 18
-    Warning (13410): Pin "vga_blank" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 18
-    Warning (13410): Pin "hsync" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 18
-    Warning (13410): Pin "vsync" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 19
+    Warning (13410): Pin "vga_r[0]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_r[1]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_r[2]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_r[3]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_r[4]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_r[5]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_r[6]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_r[7]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_g[0]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_g[1]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_g[2]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_g[3]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_g[4]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_g[5]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_g[6]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_g[7]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_b[0]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_b[1]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_b[2]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_b[3]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_b[4]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_b[5]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_b[6]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_b[7]" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 25
+    Warning (13410): Pin "vga_clk" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 24
+    Warning (13410): Pin "vga_blank" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 24
+    Warning (13410): Pin "hsync" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 24
+    Warning (13410): Pin "vsync" is stuck at GND File: D:/quartus/finalProject/finalProject.v Line: 24
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk" File: D:/quartus/finalProject/finalProject.v Line: 14
-    Warning (15610): No output dependent on input pin "rst" File: D:/quartus/finalProject/finalProject.v Line: 14
-    Warning (15610): No output dependent on input pin "data" File: D:/quartus/finalProject/finalProject.v Line: 14
-    Warning (15610): No output dependent on input pin "data_clk" File: D:/quartus/finalProject/finalProject.v Line: 14
+    Warning (15610): No output dependent on input pin "clk" File: D:/quartus/finalProject/finalProject.v Line: 22
+    Warning (15610): No output dependent on input pin "rst" File: D:/quartus/finalProject/finalProject.v Line: 22
+    Warning (15610): No output dependent on input pin "data" File: D:/quartus/finalProject/finalProject.v Line: 22
+    Warning (15610): No output dependent on input pin "data_clk" File: D:/quartus/finalProject/finalProject.v Line: 22
 Info (21057): Implemented 32 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 28 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 60 warnings
-    Info: Peak virtual memory: 4795 megabytes
-    Info: Processing ended: Fri Oct 28 01:58:18 2022
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:14
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 54 warnings
+    Info: Peak virtual memory: 4797 megabytes
+    Info: Processing ended: Sat Nov 19 19:04:25 2022
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:15
 
 
