@@ -29,7 +29,7 @@ module memory
 	// See the $readmemb template page for details.
 	initial 
 	begin : INIT
-	    // the folowing path must be modified to reflect the machine being used
+	//To modify the read content
 		//$readmemh("/home/haoze/Desktop/ECE6710/FinalProject/Processor/memory.txt",ram);
 	end 
 
