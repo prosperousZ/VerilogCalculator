@@ -10,21 +10,18 @@
 // Comments: 		
 //
 //////////////////////////////////////////////////////////////////////////////////
-module mux(A,B,sel,Y);
-   //Our input and output would be 8 bits
-   input [7:0] A, B;
-   input sel;
 
-   // these two lines could be combined into output reg [15:0] Y; (?)
-   reg[7:0] Y;
-   output [7:0] Y;
+ module mux(A, B, sel, Y);
 
-   always @(A or B or sel)
-   begin
-      if(sel == 1'b0)
-         Y <= A;
-      else
-         Y <= B;	
-   end
+ output [15:0] Y;
+ input [15:0] A, B;
+ input sel;
+ reg [15:0] Y;
 
-endmodule
+ always @(A or B or sel)
+ if (sel == 1'b0)
+	Y = A;
+	else
+	Y = B;
+
+ endmodule
