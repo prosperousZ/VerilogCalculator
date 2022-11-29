@@ -2,7 +2,7 @@
 
 `timescale 1ns / 1ps
 module tb_regfile;
-parameter WIDTH = 8, REGBITS = 3;
+parameter WIDTH = 16, REGBITS = 4;
 reg  clk; 
 reg  regwrite; 
 reg  [REGBITS-1:0] ra1, ra2, wa; 
