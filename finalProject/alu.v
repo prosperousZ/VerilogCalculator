@@ -17,23 +17,26 @@ module alu(a, b, out, mode, neg);
 	// definitions of parameters, inputs, outputs, wires, regs...
 	//Let me take neg first to test
 	
-	input [7:0] a, b;
+	input [15:0] a, b;
 	
 	// FPGA has only 10 switches: 8 will be numbers, 2 will be operations
 	// which means some numbers and operations will be a combination of 2 switches.
-	input [1:0] mode;
+	input [2:0] mode;
 
-	output reg [7:0] out;
+	output reg [15:0] out;
 	output reg neg;
 
 	// variable names for modes to make things easier
-	parameter ADD = 2'b00;
-	parameter SUB = 2'b01;
-	parameter MUL = 2'b10;
-	parameter DIV = 2'b11;
+	
+	//set up initial state to 3'b100, dont need to declare 
+	
+	parameter ADD = 3'b000;
+	parameter SUB = 3'b001;
+	parameter MUL = 3'b010;
+	parameter DIV = 3'b011;
 
-	wire [7:0] tempA;
-	wire [7:0] temp;
+	wire [15:0] tempA;
+	wire [15:0] temp;
 
 	
 /*	// any wires needed
@@ -45,7 +48,7 @@ module alu(a, b, out, mode, neg);
 	// do something whenever a or b changes -> may need more on the list
 	always@(a or b or mode)
 	begin
-		out = 8'b00000000;
+		out = 16'b0000000000000000;
 
 /*		// check to see if either operand is negative
 		tempA = a >> 8;		// right shift 8 (or is it 7?) spaces to get leading 1
